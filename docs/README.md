@@ -8,6 +8,7 @@ Documentação técnica dos fontes da integração **Solarman Cloud Custom** par
 |-----------|-----------|
 | [Arquitetura](ARCHITECTURE.md) | Visão geral da arquitetura, componentes e fluxo de dados |
 | [Código-fonte](SOURCE_CODE.md) | Documentação detalhada de cada módulo e classe |
+| [Sensores](SENSORS.md) | Documentação dos sensores criados: potência instantânea, energia acumulada (dia, total) e alternativas para min/hora/semana/mês/ano |
 
 ## Visão geral
 

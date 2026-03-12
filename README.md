@@ -50,6 +50,7 @@ Documentação detalhada dos fontes está em [`docs/`](docs/README.md):
 
 - [Arquitetura](docs/ARCHITECTURE.md) – componentes, fluxo de dados
 - [Código-fonte](docs/SOURCE_CODE.md) – módulos, classes e APIs
+- [Sensores](docs/SENSORS.md) – o que cada sensor exibe (potência, energia por dia/total, alternativas para min/hora/semana/mês/ano)
 
 ## Observações
 - Nenhuma credencial vem fixa no código.
