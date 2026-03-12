@@ -44,6 +44,13 @@ Integração custom para Home Assistant que consulta a OpenAPI da Solarman pela 
 - **Poll interval** em segundos
 - opção para informar que a senha já está em **SHA256**
 
+## Documentação técnica
+
+Documentação detalhada dos fontes está em [`docs/`](docs/README.md):
+
+- [Arquitetura](docs/ARCHITECTURE.md) – componentes, fluxo de dados
+- [Código-fonte](docs/SOURCE_CODE.md) – módulos, classes e APIs
+
 ## Observações
 - Nenhuma credencial vem fixa no código.
 - Para alguns microinversores, `MICRO_INVERTER` funciona melhor que `INVERTER`.
