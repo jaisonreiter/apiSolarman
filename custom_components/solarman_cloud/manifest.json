@@ -1,7 +1,7 @@
 {
   "domain": "solarman_cloud",
   "name": "Solarman Cloud",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "documentation": "https://doc.solarmanpv.com/",
   "issue_tracker": "https://github.com/your-org/solarman-cloud-ha/issues",
   "requirements": [],
