@@ -1,0 +1,10 @@
+{
+  "name": "Solarman Cloud Custom",
+  "country": ["BR", "PT", "US", "ES", "DE", "FR", "IT"],
+  "domains": ["solarman_cloud_custom"],
+  "homeassistant": "2024.1.0",
+  "iot_class": "cloud_polling",
+  "render_readme": true,
+  "zip_release": false,
+  "filename": ""
+}

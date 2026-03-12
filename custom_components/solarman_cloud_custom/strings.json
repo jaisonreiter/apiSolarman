@@ -1,0 +1,46 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Solarman Cloud Custom",
+        "description": "Configure sua conta OpenAPI da Solarman.",
+        "data": {
+          "base_url": "Base URL",
+          "app_id": "API ID / App ID",
+          "app_secret": "API Secret / App Secret",
+          "login_type": "Tipo de login",
+          "username": "Email / usuário / celular",
+          "password": "Senha da conta",
+          "org_id": "Org ID (opcional)",
+          "plant_id": "Plant ID (opcional)",
+          "device_sn": "Device SN (opcional)",
+          "device_type": "Tipo de dispositivo",
+          "language": "Idioma da API",
+          "poll_interval": "Intervalo de atualização (segundos)",
+          "password_already_sha256": "A senha já está em SHA256",
+          "include_plant_sensors": "Criar sensores da planta"
+        }
+      }
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opções Solarman Cloud Custom",
+        "data": {
+          "poll_interval": "Intervalo de atualização (segundos)",
+          "include_plant_sensors": "Criar sensores da planta",
+          "device_type": "Tipo de dispositivo",
+          "plant_id": "Plant ID (opcional)",
+          "device_sn": "Device SN (opcional)"
+        }
+      }
+    }
+  },
+  "error": {
+    "cannot_connect": "Não foi possível autenticar ou consultar a OpenAPI da Solarman."
+  },
+  "abort": {
+    "already_configured": "Este dispositivo já foi configurado."
+  }
+}
