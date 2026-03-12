@@ -1,0 +1,68 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect to Solarman OpenAPI",
+        "description": "Enter your Solarman OpenAPI credentials.",
+        "data": {
+          "base_url": "Base URL",
+          "app_id": "API ID / App ID",
+          "app_secret": "API Secret / App Secret",
+          "login_type": "Login type",
+          "username": "Email / Username / Mobile",
+          "password": "Password",
+          "org_id": "Org ID (optional)",
+          "hash_password": "Password is already SHA256"
+        }
+      },
+      "select_plant": {
+        "title": "Select plant",
+        "data": {
+          "plant_id": "Plant"
+        }
+      },
+      "runtime": {
+        "title": "Integration parameters",
+        "description": "Solarman default: {default_limit} requests/year.",
+        "data": {
+          "selected_device_sns": "Monitored micro inverters",
+          "device_type": "Device type",
+          "update_interval_minutes": "Polling interval (minutes)",
+          "start_time": "Polling window start (HH:MM)",
+          "end_time": "Polling window end (HH:MM)",
+          "request_limit": "Yearly requests allowed in contract",
+          "safe_percent": "Maximum allowed usage percent",
+          "default_panel_capacity_w": "Default panel capacity (W)",
+          "include_plant_sensors": "Create plant sensors",
+          "github_repo": "GitHub repo (owner/repo or URL, optional)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot connect to Solarman.",
+      "unknown": "Unexpected error.",
+      "request_budget_exceeded": "Configuration exceeds the safe annual request budget.",
+      "interval_too_low": "Polling interval is too low for the configured request budget."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Adjust Solarman Cloud",
+        "description": "Solarman default: {default_limit} requests/year.",
+        "data": {
+          "selected_device_sns": "Monitored micro inverters",
+          "device_type": "Device type",
+          "update_interval_minutes": "Polling interval (minutes)",
+          "start_time": "Polling window start (HH:MM)",
+          "end_time": "Polling window end (HH:MM)",
+          "request_limit": "Yearly requests allowed in contract",
+          "safe_percent": "Maximum allowed usage percent",
+          "default_panel_capacity_w": "Default panel capacity (W)",
+          "include_plant_sensors": "Create plant sensors",
+          "github_repo": "GitHub repo (owner/repo or URL, optional)"
+        }
+      }
+    }
+  }
+}

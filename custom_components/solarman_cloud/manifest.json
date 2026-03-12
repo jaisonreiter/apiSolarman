@@ -1,0 +1,12 @@
+{
+  "domain": "solarman_cloud",
+  "name": "Solarman Cloud",
+  "version": "3.0.0",
+  "documentation": "https://doc.solarmanpv.com/",
+  "issue_tracker": "https://github.com/your-org/solarman-cloud-ha/issues",
+  "requirements": [],
+  "dependencies": [],
+  "codeowners": ["@your-org"],
+  "config_flow": true,
+  "iot_class": "cloud_polling"
+}

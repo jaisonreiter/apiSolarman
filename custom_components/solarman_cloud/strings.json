@@ -1,0 +1,68 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Conectar à Solarman OpenAPI",
+        "description": "Informe as credenciais OpenAPI da Solarman.",
+        "data": {
+          "base_url": "Base URL",
+          "app_id": "API ID / App ID",
+          "app_secret": "API Secret / App Secret",
+          "login_type": "Tipo de login",
+          "username": "Email / Usuário / Celular",
+          "password": "Senha",
+          "org_id": "Org ID (opcional)",
+          "hash_password": "A senha já está em SHA256"
+        }
+      },
+      "select_plant": {
+        "title": "Selecionar planta",
+        "data": {
+          "plant_id": "Planta"
+        }
+      },
+      "runtime": {
+        "title": "Parâmetros da integração",
+        "description": "Padrão Solarman: {default_limit} requests/ano.",
+        "data": {
+          "selected_device_sns": "Microinversores monitorados",
+          "device_type": "Tipo de device",
+          "update_interval_minutes": "Frequência de consulta (minutos)",
+          "start_time": "Início da janela de consulta (HH:MM)",
+          "end_time": "Fim da janela de consulta (HH:MM)",
+          "request_limit": "Requests anuais permitidos no contrato",
+          "safe_percent": "Percentual máximo permitido",
+          "default_panel_capacity_w": "Capacidade padrão por placa (W)",
+          "include_plant_sensors": "Criar sensores da planta",
+          "github_repo": "Repositório GitHub (owner/repo ou URL, opcional)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Não foi possível conectar à Solarman.",
+      "unknown": "Erro inesperado.",
+      "request_budget_exceeded": "A configuração excede o orçamento anual seguro de requests.",
+      "interval_too_low": "A frequência está alta demais para o orçamento configurado."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Ajustar Solarman Cloud",
+        "description": "Padrão Solarman: {default_limit} requests/ano.",
+        "data": {
+          "selected_device_sns": "Microinversores monitorados",
+          "device_type": "Tipo de device",
+          "update_interval_minutes": "Frequência de consulta (minutos)",
+          "start_time": "Início da janela de consulta (HH:MM)",
+          "end_time": "Fim da janela de consulta (HH:MM)",
+          "request_limit": "Requests anuais permitidos no contrato",
+          "safe_percent": "Percentual máximo permitido",
+          "default_panel_capacity_w": "Capacidade padrão por placa (W)",
+          "include_plant_sensors": "Criar sensores da planta",
+          "github_repo": "Repositório GitHub (owner/repo ou URL, opcional)"
+        }
+      }
+    }
+  }
+}

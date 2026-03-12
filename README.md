@@ -1,58 +1,38 @@
-# Solarman Cloud Custom for Home Assistant
+# Solarman Cloud for Home Assistant
 
-Integração custom para Home Assistant que consulta a OpenAPI da Solarman pela cloud, pensada para funcionar inclusive quando o Home Assistant está fora da rede local, como em VPS/Hostinger.
+Integração custom para Home Assistant via Solarman OpenAPI (cloud), desenhada para:
 
-## Recursos
-- autenticação via OpenAPI usando **App ID / API ID** e **App Secret / API Secret**
-- suporte a login por `email`, `username` ou `mobile`
-- descoberta automática da primeira planta e do primeiro dispositivo, se `plant_id` e `device_sn` não forem informados
-- leitura de dados do dispositivo pela cloud
-- criação dinâmica de sensores a partir do `dataList`
-- tela de configuração via UI no Home Assistant
-- opções pós-instalação para ajustar `poll_interval`, `plant_id`, `device_sn`, `device_type` e sensores da planta
-
-## Compatibilidade
-- Home Assistant `2024.1.0+`
-- domínio internacional padrão: `https://globalapi.solarmanpv.com`
+- múltiplos microinversores
+- sensores canônicos compatíveis com Energy Dashboard
+- sensores por placa/canal quando o payload do microinversor expuser esses dados
+- controle de janela horária de coleta
+- controle de orçamento anual de requests
+- atualização via HACS / GitHub release
+- validação manual de topologia (planta + devices)
 
 ## Instalação manual
-1. Extraia este pacote.
-2. Copie `custom_components/solarman_cloud_custom` para `/config/custom_components/`.
-3. Reinicie o Home Assistant.
-4. Vá em **Configurações > Dispositivos e Serviços > Adicionar integração**.
-5. Procure por **Solarman Cloud Custom**.
 
-## Instalação via HACS (repositório custom)
-1. Publique o conteúdo deste pacote em um repositório Git.
-2. No HACS, vá em **Integrations** → menu de três pontos → **Custom repositories**.
-3. Adicione a URL do repositório e escolha o tipo **Integration**.
-4. Instale **Solarman Cloud Custom**.
-5. Reinicie o Home Assistant.
-6. Vá em **Configurações > Dispositivos e Serviços** e adicione a integração.
+1. Copie `custom_components/solarman_cloud` para `/config/custom_components/`.
+2. Reinicie o Home Assistant.
+3. Vá em **Configurações > Dispositivos e Serviços > Adicionar integração**.
+4. Procure por **Solarman Cloud**.
 
-## Campos da configuração
-- **Base URL**: normalmente `https://globalapi.solarmanpv.com`
-- **API ID / App ID**
-- **API Secret / App Secret**
-- **Tipo de login**: `email`, `username` ou `mobile`
-- **Email / usuário / celular**
-- **Senha da conta**
-- **Org ID** opcional
-- **Plant ID** opcional
-- **Device SN** opcional
-- **Device type**: `INVERTER`, `MICRO_INVERTER` ou `COLLECTOR`
-- **Poll interval** em segundos
-- opção para informar que a senha já está em **SHA256**
+## Instalação via HACS
 
-## Documentação técnica
+1. Publique este conteúdo em um repositório GitHub.
+2. Crie uma release/tag nova a cada versão.
+3. No HACS, adicione o repositório em **Custom repositories** como **Integration**.
+4. Instale a integração.
 
-Documentação detalhada dos fontes está em [`docs/`](docs/README.md):
+## Regras de requests
 
-- [Arquitetura](docs/ARCHITECTURE.md) – componentes, fluxo de dados
-- [Código-fonte](docs/SOURCE_CODE.md) – módulos, classes e APIs
-- [Sensores](docs/SENSORS.md) – o que cada sensor exibe (potência, energia por dia/total, alternativas para min/hora/semana/mês/ano)
+- A planta/topologia é carregada somente na instalação inicial e quando o usuário aciona o botão **Validar planta / Atualizar topologia**.
+- O polling normal consulta apenas os microinversores selecionados.
+- Sensores por placa são derivados da mesma resposta do microinversor, sem requests extras por placa.
+- A integração calcula o consumo anual estimado e bloqueia configurações acima do limite seguro.
 
 ## Observações
-- Nenhuma credencial vem fixa no código.
-- Para alguns microinversores, `MICRO_INVERTER` funciona melhor que `INVERTER`.
-- Esta integração foi estruturada com base na OpenAPI pública da Solarman, mas pode exigir ajuste fino dependendo do tipo de conta/planta/dispositivo retornado pela sua conta.
+
+- Os nomes exatos de chaves de painel/placa variam por fabricante/modelo.
+- Quando a API não trouxer potência nominal por placa, a integração usa a capacidade padrão por placa configurada pelo usuário.
+- Para atualização automática, o caminho recomendado é instalar via HACS e publicar novas releases GitHub com `version`/tag atualizados.
